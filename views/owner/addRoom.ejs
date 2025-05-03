@@ -1,0 +1,10 @@
+<h2>Add a New Room</h2>
+<form action="/owner/add-room" method="POST">
+  <input type="text" name="title" placeholder="Title" required />
+  <input type="text" name="location" placeholder="Location" required />
+  <input type="number" name="price" placeholder="Price" required />
+  <textarea name="description" placeholder="Description"></textarea>
+  <input type="text" name="amenities" placeholder="Amenities (comma separated)" />
+  <input type="file" name="image" accept="image/*" />
+  <button type="submit">Post Room</button>
+</form>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Select Role - FindMyRoom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+
+  <h1 class="text-3xl font-semibold mb-8">Who are you?</h1>
+
+  <div class="flex gap-8">
+    <!-- Tenant Card -->
+    <a href="/register/tenant" class="bg-white shadow-lg rounded-xl p-8 w-64 text-center hover:bg-blue-100 transition">
+      <h2 class="text-xl font-semibold mb-4">I am a Tenant</h2>
+      <p class="text-gray-600">Want a perfect room!</p>
+    </a>
+
+    <!-- Owner Card -->
+    <a href="/register/owner" class="bg-white shadow-lg rounded-xl p-8 w-64 text-center hover:bg-green-100 transition">
+      <h2 class="text-xl font-semibold mb-4">I am an Owner</h2>
+      <p class="text-gray-600">Want to list my room!</p>
+    </a>
+  </div>
+  <script src="/js/role.js"></script>
+</body>
+</html>

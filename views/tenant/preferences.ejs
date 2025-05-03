@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindMyRoom - Preferences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/preferences.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="heading">Tell us what you're looking for</h1>
+
+  <form id="preferenceForm">
+    <label>Accommodation Type:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="accommodation" value="PG"> PG</label>
+      <label><input type="radio" name="accommodation" value="Hostel"> Hostel</label>
+      <label><input type="radio" name="accommodation" value="Flat"> Rental Flat</label>
+    </div>
+
+    <label>Search Location or College Name:</label>
+    <input type="text" placeholder="Enter area, landmark, or college" name="location">
+
+    <label>Preferred Move-In Date:</label>
+    <input type="date" name="movein">
+
+    <label>Stay Duration:</label>
+    <select name="duration">
+      <option value="<6 months">&lt;6 months</option>
+      <option value="6–12 months">6–12 months</option>
+      <option value=">1 year">&gt;1 year</option>
+    </select>
+
+    <label>Budget Range (per month):</label>
+    <div class="range-wrapper">
+      <span class="range-label">₹2,000</span>
+      <input type="range" min="2000" max="25000" step="500" name="budget" id="budgetRange">
+      <span class="range-label">₹25,000</span>
+    </div>
+    <div class="budget-current">Selected Budget: <span id="budgetValue">₹12,000</span></div>
+
+    <label>Gender-Specific Stay:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Male"> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+      <label><input type="radio" name="gender" value="Co-ed"> Co-ed</label>
+    </div>
+
+    <label>Sharing Preference:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="sharing" value="Single Seater"> Single Seater</label>
+      <label><input type="checkbox" name="sharing" value="Double Seater"> Double Seater</label>
+      <label><input type="checkbox" name="sharing" value="Triple Seater"> Triple Seater</label>
+      <label><input type="checkbox" name="sharing" value="Dormitory"> Dormitory</label>
+      <label><input type="checkbox" name="sharing" value="Studio / 1BHK / 2BHK"> Studio / 1BHK / 2BHK</label>
+    </div>
+
+    <label>Services Needed:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="services" value="Mess"> Mess (Veg/Non-Veg)</label>
+      <label><input type="checkbox" name="services" value="Wi-Fi"> Wi-Fi</label>
+      <label><input type="checkbox" name="services" value="AC"> AC / Cooler</label>
+      <label><input type="checkbox" name="services" value="Laundry"> Laundry</label>
+      <label><input type="checkbox" name="services" value="Housekeeping"> Housekeeping</label>
+      <label><input type="checkbox" name="services" value="Study Area"> Study Area</label>
+      <label><input type="checkbox" name="services" value="Gym"> Gym</label>
+      <label><input type="checkbox" name="services" value="Parking"> Parking</label>
+      <label><input type="checkbox" name="services" value="Kitchen"> Induction / Kitchen Access</label>
+      <label><input type="checkbox" name="services" value="RO Water"> RO Water</label>
+      <label><input type="checkbox" name="services" value="Geyser"> Geyser</label>
+      <label><input type="checkbox" name="services" value="Balcony"> Room with Balcony</label>
+      <label><input type="checkbox" name="services" value="Attached Washroom"> Attached Washroom</label>
+      <label><input type="checkbox" name="services" value="Guest Stay"> Guest Stay Allowed</label>
+    </div>
+  
+  </form>
+  <a href="/tenant/suggestions" class="your-tailwind-styles">
+    See Suggestions
+</a>
+</div>
+
+<script src="/js/preferences.js"></script>
+</body>
+</html>

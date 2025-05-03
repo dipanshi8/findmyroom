@@ -1,0 +1,19 @@
+<h2>Available Rooms for Booking</h2>
+
+<ul>
+  <% rooms.forEach(room => { %>
+    <li style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+      <h3><%= room.title %></h3>
+      <img src="/images/<%= room.image %>" alt="room image" width="250" style="border-radius: 8px;" />
+      <p><strong>Location:</strong> <%= room.location %></p>
+      <p><strong>Price:</strong> ₹<%= room.price %></p>
+      <p><strong>Description:</strong> <%= room.description %></p>
+      <p><strong>Amenities:</strong> <%= room.amenities.join(", ") %></p>
+      <p><strong>Posted By:</strong> <%= room.owner.name %></p>
+
+      <form action="/tenant/book/<%= room._id %>" method="POST">
+        <button type="submit">Book Room</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

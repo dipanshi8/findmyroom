@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindMyRoom - Tenant <%= mode === 'login' ? 'Login' : 'Register' %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col justify-center items-center">
+    <h1 class="text-3xl font-semibold mb-10">Welcome to <span class="text-blue-500">FindMyRoom</span></h1>
+
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">
+            <%= mode === 'login' ? 'Login to Your Tenant Account' : 'Create Your Tenant Account' %>
+        </h2>
+
+        <% if (typeof error !== 'undefined') { %>
+            <p class="text-red-500 mb-4"><%= error %></p>
+        <% } %>
+
+        <form action="<%= mode === 'login' ? '/login' : '/register' %>" method="POST" class="space-y-4">
+            <input type="hidden" name="role" value="tenant">
+
+            <% if (mode === 'register') { %>
+                <input type="text" name="name" placeholder="Full Name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <% } %>
+
+            <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="password" name="password" placeholder="Password" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg">
+                <%= mode === 'login' ? 'Login' : 'Create My Account' %>
+            </button>
+        </form>
+
+        <p class="mt-4 text-sm text-gray-600">
+            <% if (mode === 'login') { %>
+                New here?
+                <a href="/register?role=tenant" class="text-blue-500 hover:underline">Create Account</a>
+            <% } else { %>
+                Already have an account?
+                <a href="/login?role=tenant" class="text-blue-500 hover:underline">Login</a>
+            <% } %>
+        </p>
+    </div>
+</body>
+</html>

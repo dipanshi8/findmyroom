@@ -1,0 +1,13 @@
+<form action="/register" method="POST">
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+    
+    <select name="role" required>
+      <option value="tenant">Tenant</option>
+      <option value="owner">Owner</option>
+    </select>
+    
+    <button type="submit">Register</button>
+  </form>
+  

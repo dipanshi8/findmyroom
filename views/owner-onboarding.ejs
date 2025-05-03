@@ -1,0 +1,166 @@
+<% if (messages.success) { %>
+    <div class="bg-green-500 text-white p-4 rounded shadow-lg mb-4">
+        <%= messages.success[0] %>
+    </div>
+<% } %>
+
+<% if (messages.error) { %>
+    <div class="bg-red-100 text-red-700 p-2 rounded mb-4">
+        <%= messages.error[0] %>
+    </div>
+<% } %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Onboarding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f9dbbd] py-8">
+    <form id="ownerForm" action="/owner/onboarding" method="POST" enctype="multipart/form-data">
+        
+        <!-- A. Personal Information -->
+        <h2 class="text-white bg-[#6e4555] text-lg font-semibold px-4 py-2 rounded-md mb-4">A. Personal Information</h2>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-[#6e4555] mb-1">Full Name</label>
+                <input type="text" name="fullName" placeholder="Enter your full name" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Profile Picture <span class="italic text-sm">(Optional)</span></label>
+                <input type="file" name="profilePic" accept="image/*"
+                    class="w-full border border-[#6e4555] rounded-md p-2 bg-white" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Date of Birth</label>
+                <input type="date" name="dob" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Gender</label>
+                <select name="gender" required
+                    class="w-full border border-[#6e4555] rounded-md p-2">
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Email ID</label>
+                <div class="flex gap-2">
+                    <input type="email" name="email" placeholder="Enter your email" required
+                        class="w-full border border-[#6e4555] rounded-md p-2" />
+                    <button type="button" onclick="sendOTP('email')"
+                        class="px-4 py-2 border border-[#6e4555] text-[#6e4555] rounded-md hover:bg-[#f1c9a4]">Send OTP</button>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Mobile Number</label>
+                <div class="flex gap-2">
+                    <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Enter your mobile number" required
+                        class="w-full border border-[#6e4555] rounded-md p-2" />
+                    <button type="button" onclick="sendOTP('mobile')"
+                        class="px-4 py-2 border border-[#6e4555] text-[#6e4555] rounded-md hover:bg-[#f1c9a4]">Send OTP</button>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Government ID Proof Upload (Aadhaar/PAN)</label>
+                <input type="file" name="govtIdProof" required
+                    class="w-full border border-[#6e4555] rounded-md p-2 bg-white" />
+            </div>
+        </div>
+
+        <!-- B. Property Details -->
+        <h2 class="text-white bg-[#6e4555] text-lg font-semibold px-4 py-2 rounded-md my-6">B. Property Details</h2>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-[#6e4555] mb-1">Property Name</label>
+                <input type="text" name="propertyName" placeholder="Enter your property name" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Property Address</label>
+                <textarea name="propertyAddress" placeholder="Enter full address of the property" rows="3" required
+                    class="w-full border border-[#6e4555] rounded-md p-2"></textarea>
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">City</label>
+                <input type="text" name="city" placeholder="Enter city" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">State</label>
+                <input type="text" name="state" placeholder="Enter state" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Pin Code</label>
+                <input type="text" name="pinCode" placeholder="Enter pin code" required pattern="[0-9]{6}"
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Upload Property Images</label>
+                <input type="file" name="propertyImages" accept="image/*" multiple required
+                    class="w-full border border-[#6e4555] rounded-md p-2 bg-white" />
+            </div>
+        </div>
+
+        <!-- C. Bank Details -->
+        <h2 class="text-white bg-[#6e4555] text-lg font-semibold px-4 py-2 rounded-md my-6">C. Bank Details</h2>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-[#6e4555] mb-1">Account Holder Name</label>
+                <input type="text" name="accountHolderName" placeholder="Enter account holder name" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Bank Name</label>
+                <input type="text" name="bankName" placeholder="Enter bank name" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">Account Number</label>
+                <input type="text" name="accountNumber" placeholder="Enter account number" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+
+            <div>
+                <label class="block text-[#6e4555] mb-1">IFSC Code</label>
+                <input type="text" name="ifsc" placeholder="Enter IFSC code" required
+                    class="w-full border border-[#6e4555] rounded-md p-2" />
+            </div>
+        </div>
+
+        <button type="submit"
+            class="bg-[#6e4555] text-white mt-8 w-full py-3 rounded-md hover:bg-[#573345] transition">
+            Submit
+        </button>
+    </form>
+
+    <script>
+        function sendOTP(type) {
+            alert('OTP sent to your ' + type + ' (Mock Function)');
+        }
+    </script>
+</body>
+</html>

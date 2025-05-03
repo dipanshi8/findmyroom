@@ -1,0 +1,23 @@
+<h2>Your Posted Rooms</h2>
+<a href="/owner/add-room">➕ Add New Room</a>
+
+<ul>
+  <% rooms.forEach(room => { %>
+    <li style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+      <h3><%= room.title %></h3>
+      <img src="/images/<%= room.image %>" alt="room image" width="250" style="border-radius: 8px;" />
+      <p><strong>Location:</strong> <%= room.location %></p>
+      <p><strong>Price:</strong> ₹<%= room.price %></p>
+      <p><strong>Description:</strong> <%= room.description %></p>
+      <p><strong>Amenities:</strong> <%= room.amenities.join(", ") %></p>
+      
+      <% if (room.isBooked) { %>
+        <p style="color: green;"><strong>Booked By:</strong> <%= room.bookedBy ? room.bookedBy.name : "Unknown" %> (<%= room.bookedBy?.email %>)</p>
+      <% } else { %>
+        <p style="color: red;">Not Booked</p>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>
+
+

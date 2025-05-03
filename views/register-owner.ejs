@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owner Registration | FindMyRoom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-aqua-100 min-h-screen flex items-center justify-center relative">
+
+  <% if (messages.success && messages.success.length > 0) { %>
+    <div class="absolute top-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg shadow-lg max-w-md w-full text-center mx-auto">
+      <%= messages.success[0] %>
+    </div>
+  <% } %>
+
+  <div class="bg-white shadow-lg rounded-2xl p-8 max-w-md w-full mt-16">
+    <h2 class="text-2xl font-bold text-aqua-600 mb-4">Create Your Owner Account</h2>
+
+    <form action="/register/owner" method="POST" class="flex flex-col gap-4">
+      <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-aqua-400">
+      <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-aqua-400">
+      <input type="password" name="password" placeholder="Password" required class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-aqua-400">
+
+      <!-- Centered Register button -->
+      <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white py-3 rounded-xl text-lg font-semibold transition">Register</button>
+
+    </form>
+
+    <p class="text-center text-sm text-gray-600 mt-4">
+      Already have an account?
+      <a href="/login/owner" class="text-aqua-600 hover:underline font-medium">Login here</a>
+    </p>
+  </div>
+
+</body>
+</html>

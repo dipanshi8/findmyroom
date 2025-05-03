@@ -1,0 +1,14 @@
+<h2>My Booked Rooms</h2>
+
+<ul>
+  <% rooms.forEach(room => { %>
+    <li style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+      <h3><%= room.title %></h3>
+      <img src="/images/<%= room.image %>" alt="room image" width="250" />
+      <p><strong>Location:</strong> <%= room.location %></p>
+      <p><strong>Price:</strong> ₹<%= room.price %></p>
+      <p><strong>Description:</strong> <%= room.description %></p>
+      <p><strong>Owner:</strong> <%= room.owner.name %></p>
+    </li>
+  <% }) %>
+</ul>

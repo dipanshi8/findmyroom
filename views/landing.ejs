@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student PG Rentals | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/my.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">FindMyRoom</div>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="#listings">Listings</a>
+        <div class="dropdown">
+          <a href="#pgs">PGs</a>
+          <a href="#hostels">Hostels</a>
+          <a href="#flats">Flats</a>
+        </div>
+      </li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/role" class="button-link">Register/Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Simplifying Student Living</h1>
+  <p>Connect with flatmates, track your living experience,
+    and live smarter. Because moving in is just the beginning.</p>
+  <div class="search-container">
+    <input type="text" placeholder="Search by city, college, or area...">
+  </div>
+</section>
+
+<section class="carousel">
+  <div class="carousel-track">
+    <img src="/images/one.png" alt="Banner 1">
+    <img src="/images/two.jpg" alt="Banner 2">
+    <img src="/images/three.png" alt="Banner 3">
+    <img src="/images/four.png" alt="Banner 4">
+    <img src="/images/five.png" alt="Banner 5">
+    <img src="/images/one.png" alt="Banner 1"> 
+    <img src="/images/two.jpg" alt="Banner 2"> 
+    <img src="/images/three.png" alt="Banner 3"> 
+    <img src="/images/four.png" alt="Banner 4"> 
+    <img src="/images/five.png" alt="Banner 5"> 
+  </div>
+</section>
+
+<section class="cities">
+  <h2>Top Cities</h2>
+  <div class="city-grid">
+    <div class="city">Mumbai</div>
+    <div class="city">Delhi</div>
+    <div class="city">Bangalore</div>
+    <div class="city">Hyderabad</div>
+    <div class="city">Chennai</div>
+    <div class="city">Kolkata</div>
+  </div>
+</section>
+
+<section class="features" id="services">
+  <h2>Our Exceptional Services</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <img src="/images/six.png" alt="Service">
+      <h3>Virtual Tour</h3>
+    </div>
+    <div class="feature-card">
+      <img src="/images/seven.png" alt="Service">
+      <h3>Customizable Service Bundles</h3>
+    </div>
+    <div class="feature-card">
+      <img src="/images/eight.png" alt="Service">
+      <h3>Manage Multiple Properties</h3>
+    </div>
+    <div class="feature-card">
+      <img src="/images/nine.png" alt="Service">
+      <h3>Track Payments, Complaints, Service usage</h3>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="testimonials">
+  <h2>Hear From Our Users</h2>
+  <div class="review-grid">
+    <div class="review-card">"Super convenient and trustworthy!" - Aditi, DU</div>
+    <div class="review-card">"Best PG experience ever!" - Rahul, IIT Bombay</div>
+    <div class="review-card">"Loved the roommate matching feature!" - Sneha, Christ Univ.</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>
+    FindMyHome is a platform designed to simplify student living. Whether you're looking for a PG, hostel, or flat near your college, we help you find the perfect place with verified listings, roommate matching, and essential services. Our goal is to make relocation stress-free and enjoyable for students across India.
+  </p>
+</section>
+
+<footer class="footer">
+  <p>© 2025 PGFindr. All rights reserved.</p>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook"></i>Fb</a>
+    <a href="#"><i class="fab fa-instagram"></i>Ig</a>
+    <a href="#"><i class="fab fa-twitter"></i>Tw</a>
+  </div>
+
+  <div class="contact-info">
+    <p>Contact us at:</p>
+    <p>Email: <a href="mailto:getreply12@gmail.com">getreply12@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918976558686">9876556868</a></p>
+  </div>
+</footer>
+
+<div class="chatbot-bubble" id="chatbot-toggle">
+    💬
+</div>
+
+<div class="chatbot-window" id="chatbot-window">
+  <div class="chatbot-header">Hi! How can I help you?</div>
+  <div class="chatbot-body">
+    <div class="role-selection">
+      <p>Select your role:</p>
+      <button onclick="showFAQs('student')">Student / Tenant</button>
+      <button onclick="showFAQs('owner')">Property Owner</button>
+    </div>
+    <div class="faq-buttons" id="faq-buttons"></div>
+    <div class="chatlog" id="chatlog"></div>
+  </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="/js/home.js"></script>
+
+</body>
+</html>
